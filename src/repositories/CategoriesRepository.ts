@@ -11,7 +11,7 @@ class CategoriesRepository {
   constructor() {
     this.categories = [];
   }
-  
+
   create({ description, name }: ICreateCategoryDTO): void {
     const category = new Category();
 
@@ -22,6 +22,10 @@ class CategoriesRepository {
     });
 
     this.categories.push(category);
+  }
+
+  list(): Category[] {
+    return this.categories;
   }
 }
 
