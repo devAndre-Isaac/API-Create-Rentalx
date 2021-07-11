@@ -1,0 +1,31 @@
+test('PUT /api/company ValidParams', async t => {
+
+
+
+    const id = '395f8f75-34d8-4a99-9f1e-d46a17062eed';
+    sinon.stub(controllers, 'updateCompanyById').resolves({
+        msg: 'controllers.updateCompanyById',
+    } as any);
+
+    const body = {
+        username: 'andre',
+        fancyname: 'seidor',
+        cnpj: '11111111111111',
+        phone: '',
+        crt: '22',
+    };
+
+    const res = await request(app)
+        .put(`/api/company/${id}`)
+        .send(body)
+        .set('tenantid', '2e9437cf-c12a-4c21-8119-7279025bbfd4');
+
+    const expected = {
+        msg: 'controllers.updateCompanyById'
+    };
+    t.is(res.status, 200);
+
+isParamsInValidationErrors - verificar nos casos que era para dar erro
+fazer teste controller update
+
+PROMISE
