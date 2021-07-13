@@ -1,7 +1,13 @@
 declare namespace Express {
-    interface Request {
-      file: {
-        id: string;
-      };
-    }
+  interface Request {
+    file: Express.Multer.File;
   }
+}
+
+declare namespace Express {
+  interface Request {
+    user: {
+      id: string;
+    };
+  }
+}
