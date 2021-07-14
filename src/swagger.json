@@ -14,7 +14,7 @@
                 "tags": ["Category"],
                 "summary": "Create a Category",
                 "description": "Create a new Category",
-                "requestbody":{
+                "requestBody":{
                     "content": {
                         "application/json":{
                             "schema": {
